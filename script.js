@@ -60,7 +60,7 @@ function handleClick(event) {
     }
     cepSplit = cep.split('.').join('').split('-').join('');
     getLoadContainer.classList.add(activeClass);
-    getFindingText.innerHTML = 'Finding location<span>.</span><span>.</span><span>.</span>'
+    getFindingText.innerHTML = 'Procurando<span>.</span><span>.</span><span>.</span>'
     getLottiePlayer.getLottie().goToAndPlay(0, false);
     fetch(`https://viacep.com.br/ws/${cepSplit}/json/`)
     .then(response => response.json())
@@ -99,20 +99,20 @@ function handleClick(event) {
 function handleSearching() {
   switch(search) {
     case 'found':
-      getFindingText.innerHTML = 'Location found!';
+      getFindingText.innerHTML = 'Encontrado!';
       getFoundAddressJson.getLottie().goToAndPlay(0, false);
       getLottiePlayer.style.display = 'none';
       getFoundAddressJson.style.display = 'block';
-      getFindingText.style.left = "195px";
+      getFindingText.style.left = "208px";
       getFoundAddressJson.addEventListener('complete', handleComplete);
       break;
     case 'notfound':
-      getFindingText.innerHTML = 'Location not found!'
+      getFindingText.innerHTML = 'Não encontrado!'
       getNotFoundAddressJson.getLottie().goToAndPlay(0, false);
       getResult.style.display = 'none';
       getLottiePlayer.style.display = 'none';
       getNotFoundAddressJson.style.display = 'block';
-      getFindingText.style.left = "185px";
+      getFindingText.style.left = "188px";
       inputcep.value = '';
       getNotFoundAddressJson.addEventListener('complete', handleComplete);      
       break;
