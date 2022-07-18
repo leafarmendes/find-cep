@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background: #212121;
+  font-family: 'Roboto', sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input {
+  display: block;
+  margin-bottom: 6px;
+}
+
+#result {
+  display: none;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.container {
+  width: 500px;
+  height: 900px;
+  max-height: auto;
+  background: #F9F9F9;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #3D3D3D;
+}
+
+.container h1 span {
+  font-weight: 700;
+  color: #04A777;
+}
+
+.container p {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #3D3D3D;
+}
+
+.cep-input {
+  width: 343.5px;
+  height: 52px;
+  left: 129px;
+  top: 547.3px;
+  padding: 10px;
+  text-align: center;
+
+  background: #F7F7F7;
+  border: 1px solid #C8C8C8;
+  border-radius: 8px;
+  font-size: 0.925rem;
+}
+
+#cep-submit {
+  width: 343.5px;
+  height: 52px;
+  left: 129px;
+  top: 614.39px;
+
+  background: #04A777;
+  border-radius: 8px;
+  border: none;
+  color: #FFF;
+  font-size: 0.925rem;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+#cep-submit:hover {
+  filter: brightness(110%);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(148, 148, 148);
+  padding: 4px;
+}
+
+a:hover {
+  //text-decoration: underline;
+  padding: 4px;
+  background: #04A777;
+  border-radius: 2px;
+  color: #fff;
+}
+
+.load-search {
+  display: none;
+  z-index: 1000;
+}
+
+.load-search.active {
+  display: block;
+  animation: opacity 1s forwards;
+}
+
+.load-bg {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.895);
+}
+
+.lottie-searching div {
+  position: absolute;
+  top: 300px;
+  left: 150px;
+  z-index: 1000;
+}
+
+lottie-player {
+  display: block;
+  position: absolute;
+  top: 300px;
+  left: 150px;
+  z-index: 1000;
+}
+
+lottie-player .found-address {
+  display: none;
+  position: absolute;
+  top: 300px;
+  left: 150px;
+  z-index: 1000;
+}
+
+lottie-player .notfound-address {
+  display: none;
+  position: absolute;
+  top: 300px;
+  left: 150px;
+  z-index: 1000;
+}
+
+.load-search p {
+  position: absolute;
+  top: 450px;
+  left: 185px;
+  z-index: 1000;
+  font-weight: 400;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(148, 148, 148);
+  animation: pump 2s infinite;
+}
+
+.load-search p span {
+  margin-left: 4px;
+}
+
+.load-search p span:nth-child(1) {
+  position: relative;
+  animation: animate 1s infinite;
+  color: #1eacff;
+  animation-fill-mode: infinite;
+}
+
+.load-search p span:nth-child(2) {
+  position: relative;
+  animation: animate 1s infinite;
+  animation-delay: 0.25s;
+  color: #1eacff;
+  animation-fill-mode: infinite;
+}
+
+.load-search p span:nth-child(3) {
+  position: relative;
+  animation: animate 1s infinite;
+  animation-delay: 0.5s;
+  color: #1eacff;
+  animation-fill-mode: infinite;
+}
+
+.addr-info {
+  height: 40px;
+  background:;
+  margin-top: 10px;
+  background: #F7F7F7;
+  border: 1px solid #C8C8C8;
+  border-radius: 8px;
+}
+
+.addr-info strong {
+  background: #136A51;
+  padding: 10px;
+  border-radius: 8px;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.addr-info p {
+  margin: 0 10px 0 10px;;
+
+}
+
+.error {
+  border: 1px solid red !important;
+}
+
+
+@keyframes animate {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 5px;
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes pump {
+  0% {
+    transform: scale(100%)
+  }
+  50% {
+    transform: scale(105%);
+  }
+  100% {
+    transform: scale(100%)
+  }
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
