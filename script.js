@@ -48,6 +48,13 @@ const addressReturned = [
 
 buttonSubmit.addEventListener('click', handleClick);
 
+document.addEventListener('keypress', (event) => {
+  if(event.key === 'Enter') {
+    event.preventDefault();
+    handleClick(event);
+  }
+})
+
 function handleClick(event) {
   event.preventDefault();
   if(inputcep.value.length == 10) {
